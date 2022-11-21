@@ -1,19 +1,23 @@
-﻿namespace Day6_PractiseProblems
+﻿using System.Diagnostics;
+
+namespace Day6_PractiseProblems
 {
     internal class Program
     {
         static void Main(string[] args)
         {
-            int n, reverse = 0, rem;
-            Console.Write("Enter a number: ");
-            n = int.Parse(Console.ReadLine());
-            while (n != 0)
+            Stopwatch stopwatch = new Stopwatch();
+            // Begin timing
+            stopwatch.Start();
+            for (int i = 0; i < 10; i++)
             {
-                rem = n % 10;
-                reverse = reverse * 10 + rem;
-                n /= 10;
+                Console.WriteLine("HI");
             }
-            Console.Write("Reversed Number: " + reverse);
+            // Stop timing
+            stopwatch.Stop();
+            Console.WriteLine("Time Elapsed : {0}",
+                stopwatch.Elapsed);
+            Console.ReadLine();
         }
 
     }
