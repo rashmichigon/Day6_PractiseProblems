@@ -4,27 +4,21 @@
     {
         static void Main(string[] args)
         {
-            int number, sum = 0, n;
-            Console.Write("enter the Number");
-            number = int.Parse(Console.ReadLine());
-            n = number;
-            for (int i = 1; i < number; i++)
+            int n, i, m = 0, flag = 0;
+            Console.Write("Enter the Number to check Prime: ");
+            n = int.Parse(Console.ReadLine());
+            m = n / 2;
+            for (i = 2; i <= m; i++)
             {
-                if (number % i == 0)
+                if (n % i == 0)
                 {
-                    sum = sum + i;
+                    Console.Write("Number is not Prime.");
+                    flag = 1;
+                    break;
                 }
             }
-            if (sum == n)
-            {
-                Console.WriteLine("\n Entered number is a perfect number");
-                Console.ReadLine();
-            }
-            else
-            {
-                Console.WriteLine("\n Entered number is not a perfect number");
-                Console.ReadLine();
-            }
+            if (flag == 0)
+                Console.Write("Number is Prime.");
         }
 
     }
