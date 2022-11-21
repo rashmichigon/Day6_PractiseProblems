@@ -4,21 +4,16 @@
     {
         static void Main(string[] args)
         {
-            int n, i, m = 0, flag = 0;
-            Console.Write("Enter the Number to check Prime: ");
+            int n, reverse = 0, rem;
+            Console.Write("Enter a number: ");
             n = int.Parse(Console.ReadLine());
-            m = n / 2;
-            for (i = 2; i <= m; i++)
+            while (n != 0)
             {
-                if (n % i == 0)
-                {
-                    Console.Write("Number is not Prime.");
-                    flag = 1;
-                    break;
-                }
+                rem = n % 10;
+                reverse = reverse * 10 + rem;
+                n /= 10;
             }
-            if (flag == 0)
-                Console.Write("Number is Prime.");
+            Console.Write("Reversed Number: " + reverse);
         }
 
     }
